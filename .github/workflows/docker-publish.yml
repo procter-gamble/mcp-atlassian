@@ -2,12 +2,11 @@ name: Docker Publish
 
 on:
   push:
-    tags:
-      - 'v*.*.*' # Trigger on version tag pushes (e.g., v0.7.1)
+    branches: [main]
+    tags: ['v*.*.*']
   pull_request:
-    branches:
-      - main     # Trigger on PRs targeting main branch
-  workflow_dispatch: {} # Allow manual triggering from the Actions tab
+    branches: [main]
+  workflow_dispatch: {}
 
 env:
   REGISTRY: ghcr.io
